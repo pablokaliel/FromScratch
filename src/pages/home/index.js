@@ -1,6 +1,6 @@
 import Social from "../../components/Social";
 import "./styles.css";
-import {FaFacebook,FaInstagram,FaGithub} from  'react-icons/fa'
+import { FaInstagram, FaGithub, FaDiscord } from "react-icons/fa";
 
 function Home() {
   return (
@@ -14,15 +14,18 @@ function Home() {
             <p className="link-text">Youtube</p>
           </a>
         </section>
+
         <footer>
-          <Social url="https://facebook.com/pablokaliel">
-            <FaFacebook size={35} color="#fff"/>
+          <Social url="https://instagram.com/pablokallyel">
+            <FaInstagram size={35} color="#fff" />
           </Social>
-          <Social url="https://instagram.com/pablokaliel">
-            <FaInstagram size={35} color="#fff"/>
-          </Social>
+
           <Social url="https://github.com/pablokaliel">
-            <FaGithub size={35} color="#fff"/>
+            <FaGithub size={35} color="#fff" />
+          </Social>
+
+          <Social url="https://github.com/pablokaliel">
+            <FaDiscord size={35} color="#fff" />
           </Social>
         </footer>
       </main>
