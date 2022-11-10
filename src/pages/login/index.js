@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Logo from "../../components/Logo";
-import { auth } from "../../services/firebaseConnection";
 import "./styles.css";
+import { auth } from "../../services/firebaseConnection";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import Input from "../../components/input";
 
 function Login() {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -56,6 +57,7 @@ function Login() {
 
         <button type="submit">Acessar</button>
       </form>
+    
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Error from "./pages/error";
 import Private from "./routes/private";
+import Networks from "./pages/networks";
 
 
 const router = Router([
@@ -18,6 +19,10 @@ const router = Router([
   {
     path: "/admin",
     element: <Private> <Admin /> </Private>
+  },
+  {
+    path: "/admin/social",
+    element: <Private> <Networks/> </Private>
   },
   {
     path: "/*",
