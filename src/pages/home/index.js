@@ -2,6 +2,7 @@ import Social from "../../components/Social";
 import "./styles.css";
 import { FaInstagram, FaGithub, FaDiscord } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import { db } from "../../services/firebaseConnection";
 import {
@@ -12,6 +13,7 @@ import {
   doc,
   getDocs,
 } from "firebase/firestore";
+import LogoTwo from "../../components/logotwo";
 
 function Home() {
   const [links, setLinks] = useState([]);
@@ -63,33 +65,45 @@ function Home() {
    
    <div className="container">
     
-      <h1>Pablo Kaliel</h1>
-      <span>Veja meus links abaixo: 👇</span>
+      <LogoTwo/>
+      <motion.span 
+      initial={{opacity: 0}}
+      animate = {{opacity:1}}
+      transition={{ duration: 1,delay:1}}
+      >Veja meus links abaixo: 👇</motion.span>
 
       <main className="links">
        
         {links.map((item) => (
          
-         <section
+         <motion.section
+         initial={{opacity:0,x:-200}}
+         animate = {{opacity:1,x:0,type:"spring",bounce:0.2}}
+         transition={{ duration: 1}}
             key={item.id}
             className="link-area"
             style={{ backgroundColor: item.bg }}
           >
             
-            <a href={item.url} target="blank">
+            <motion.a
+            initial={{opacity:0,x:-200}}
+            animate = {{opacity:1,x:0,type:"spring",bounce:0.2}}
+            transition={{ duration: 1,delay:1.3}}
+            href={item.url} target="blank">
               <p className="link-text" style={{ color: item.color }}>
                 {item.name}
               </p>
-            </a>
+            </motion.a>
         
-          </section>
+          </motion.section>
         ))}
 
         {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
         
         <footer>
           
-            <Social url={socialLinks?.instagram}>
+            <Social
+            url={socialLinks?.instagram}>
               <FaInstagram size={35} color="#fff" />
             </Social>
 
