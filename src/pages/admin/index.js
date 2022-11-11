@@ -4,6 +4,7 @@ import "./styles.css";
 import Logo from "../../components/Logo";
 import Input from "../../components/input";
 
+
 import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
 import { db } from "../../services/firebaseConnection";
@@ -64,7 +65,8 @@ function Admin() {
       .then(() => {
         setNameInput("");
         setUrlInput("");
-        console.log("link registrado");
+        toast.success("Link  registrado com sucesso.");
+        
       })
       .catch((error) => {
         console.log("error ao registrar" + error);
@@ -75,6 +77,7 @@ function Admin() {
   async function handleDeleteLink(id) {
     const docRef = doc(db, "links", id);
     await deleteDoc(docRef);
+    toast.warn("Link  removido com sucesso.");
   }
 
   return (
