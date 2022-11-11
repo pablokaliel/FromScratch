@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../components/Logo";
+import Logo from "../../components/logotwo";
 import "./styles.css";
 import { auth } from "../../services/firebaseConnection";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -37,7 +37,10 @@ function Login() {
 
   return (
     <div className="login-container">
-      <Logo />
+      <Logo
+      nameone=""
+      nametwo="Login"
+      />
 
       <form className="form" onSubmit={handleLogin}>
         <Input

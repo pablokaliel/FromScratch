@@ -65,7 +65,10 @@ function Home() {
    
    <div className="container">
     
-      <LogoTwo/>
+      <LogoTwo
+      nameone="Pablo"
+      nametwo="Kaliel"
+      />
       <motion.span 
       initial={{opacity: 0}}
       animate = {{opacity:1}}

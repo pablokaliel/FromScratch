@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "../../components/header";
 import "./styles.css";
-import Logo from "../../components/Logo";
+import Logo from "../../components/logotwo";
 import Input from "../../components/input";
 
 
@@ -83,7 +83,10 @@ function Admin() {
   return (
     <div className="admin-container">
       <Header />
-      <Logo />
+      <Logo 
+      nameone=""
+      nametwo="Links"
+      />
 
       <form className="form" onSubmit={handleRegister}>
         <label className="label">Nome do Link</label>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./styles.css";
-function Logo() {
+function Logo(props) {
   return (
      <motion.div
      initial={{opacity:0,y:-50}}
@@ -9,8 +9,8 @@ function Logo() {
      transition={{ duration: 1}}
      className="container-logo-two">
       <h1 className="logo-two">
-        Pablo
-        <span className="logo-two-text">Kaliel</span>
+        {props.nameone}
+        <span className="logo-two-text">{props.nametwo}</span>
       </h1>
       </motion.div>
   );
