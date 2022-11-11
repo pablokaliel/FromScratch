@@ -14,7 +14,7 @@ import {
   query,
   orderBy,
   deleteDoc,
-  doc
+  doc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
@@ -72,10 +72,9 @@ function Admin() {
       });
   }
 
-
-  async function handleDeleteLink(id){
-    const docRef = doc(db,"links",id)
-    await deleteDoc(docRef)
+  async function handleDeleteLink(id) {
+    const docRef = doc(db, "links", id);
+    await deleteDoc(docRef);
   }
 
   return (
@@ -154,7 +153,10 @@ function Admin() {
           <p>{item.name}</p>
 
           <div>
-            <button className="btn-delete" onClick={()=> handleDeleteLink(item.id)}>
+            <button
+              className="btn-delete"
+              onClick={() => handleDeleteLink(item.id)}
+            >
               <FiTrash2 size={18} color="#FFF" />
             </button>
           </div>
