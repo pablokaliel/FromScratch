@@ -71,7 +71,7 @@ function Home() {
       <LanguageSwitcher />
 
       <LogoTwo nameone="Pablo" nametwo="Kaliel" />
-      <motion.span
+      <motion.span className="about-me"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
