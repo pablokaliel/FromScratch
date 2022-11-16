@@ -5,12 +5,13 @@ import { auth } from "../../services/firebaseConnection";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-
 import { toast } from "react-toastify";
 import Input from "../../components/input";
+import { useTranslation } from "react-i18next";
 
 function Login() {
-  
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,47 +21,43 @@ function Login() {
     e.preventDefault();
 
     if (email === "" || password === "") {
-      alert("Preencha todos os campos.");
+      alert("Fill in all fields.");
       return;
     }
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        toast.success("Login efetuado com sucesso!");
+        toast.success("Login successfully done!");
         navigate("/admin", { replace: true });
       })
       .catch(() => {
-        toast.error("Erro ao tentar fazer login!");
+        toast.error("Error trying to login!");
         console.log("error");
       });
   }
 
   return (
     <div className="login-container">
-      <Logo
-      nameone=""
-      nametwo="Login"
-      />
+      <Logo nameone="" nametwo="Login" />
 
       <form className="form" onSubmit={handleLogin}>
         <Input
-         type="email"
-         placeholder="Informe seu email..."
-         value={email}
-         onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder={t("login")}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        
+
         <Input
           type="password"
-          placeholder="Informe sua senha..."
+          placeholder={t("password")}
           autoComplete="on"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">Acessar</button>
+        <button type="submit">{t("access")}</button>
       </form>
-    
     </div>
   );
 }

@@ -1,8 +1,7 @@
-.social svg{
-  transition:all 0.4s;
+.social svg {
+  transition: all 0.4s;
 }
 
-.social svg:hover{
+.social svg:hover {
   transform: scale(1.06);
-
 }

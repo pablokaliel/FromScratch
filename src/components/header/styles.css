@@ -1,27 +1,25 @@
-.admin-header{
+.admin-header {
   width: 100%;
   max-width: 720px;
-  margin-top: 14px;
-  padding: 0 14px;
+  margin-top: 20px;
 
+  padding: 0 14px;
 }
 
-.nav-header{
+.nav-header {
   width: 100%;
   background-color: #fff;
   height: 48px;
   display: flex;
   align-items: center;
   border-radius: 4px;
-
 }
 
-.nav-header button{
+.nav-header button {
   border: 0;
   background-color: transparent;
   margin-right: 24px;
   margin-left: 8px;
-
 }
 
 .nav-header a {
@@ -30,6 +28,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header a:hover{
-  color:#eda617
+.nav-header a:hover {
+  color: #eda617;
 }

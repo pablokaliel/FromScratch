@@ -1,20 +1,22 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Logo from "../../components/logotwo";
 import "./styles.css";
 
 function Error() {
+  const { t } = useTranslation();
+
   return (
     <div className="error">
-      <Logo
-      nameone="dev"
-      nametwo="link"
-      />
+      <Link to="/">
+        <Logo nameone="Page" nametwo="Error" />
+      </Link>
 
-      <h1>Página não encontrada!</h1>
-      <p>Está página que está procurando não existe</p>
+      <h1>{t("pageNotFound")}</h1>
+      <p>{t("pageNotExist")}</p>
 
       <Link className="link" to="/">
-        Voltar Para Home
+        {t("backHome")}
       </Link>
     </div>
   );

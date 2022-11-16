@@ -1,0 +1,24 @@
+{
+  "translation":{
+     "linksBelow":"Olá, veja meus links abaixo",
+     "pageNotFound":"Desculpe, página não encontrada!",
+     "pageNotExist":"A página que você está procurando não existe",
+     "backHome":"Voltar para Home",
+     "labelLink":"Nome Link",
+     "placeLink":"Informe o nome do Link...",
+     "labelUrl":"URL do link",
+     "placeUrl":"Informe a url do link...",
+     "backgroundLink":"Fundo do link",
+     "linkColor":"Cor do link",
+     "preview":"Veja como esta ficando:",
+     "login":"Por favor, forneça seu e-mail",
+     "password":"Por favor, forneça sua senha",
+     "access":"Acessar",
+     "myLinks":"Meus Links",
+     "register":"Registrar",
+     "links":"Sites",
+     "netWorks":"Redes Sociais",
+     "selectYourLanguage":"Selecione seu idioma",
+     "yourNetWorks":"Minhas Redes Sociais"
+    }
+}

@@ -4,7 +4,6 @@ import "./styles.css";
 import Logo from "../../components/logotwo";
 import Input from "../../components/input";
 
-
 import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
 import { db } from "../../services/firebaseConnection";
@@ -18,12 +17,17 @@ import {
   doc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../../components/languageSwitcher";
 
 function Admin() {
   const [nameInput, setNameInput] = useState("");
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
+
+  const { t } = useTranslation();
 
   const [links, setLinks] = useState([]);
 
@@ -51,7 +55,7 @@ function Admin() {
     e.preventDefault();
 
     if (nameInput.value === "" || urlInput === "") {
-      toast.warn("Preencha todos os campos.");
+      toast.warn("Fll in all fields.");
       return;
     }
 
@@ -65,50 +69,49 @@ function Admin() {
       .then(() => {
         setNameInput("");
         setUrlInput("");
-        toast.success("Link  registrado com sucesso.");
-        
+        toast.success("Link registered successfully.");
       })
       .catch((error) => {
-        console.log("error ao registrar" + error);
-        toast.error("Ops, Erro ao salvar.");
+        console.log("error when registering" + error);
+        toast.error("Oops, Error saving.");
       });
   }
 
   async function handleDeleteLink(id) {
     const docRef = doc(db, "links", id);
     await deleteDoc(docRef);
-    toast.warn("Link  removido com sucesso.");
+    toast.warn("Link successfully removed.");
   }
 
   return (
     <div className="admin-container">
+      <LanguageSwitcher />
       <Header />
-      <Logo 
-      nameone=""
-      nametwo="Links"
-      />
+      <Link to="/">
+        <Logo nameone="Creator" nametwo="Links" />
+      </Link>
 
       <form className="form" onSubmit={handleRegister}>
-        <label className="label">Nome do Link</label>
+        <label className="label">{t("labelLink")}</label>
 
         <Input
-          placeholder="informe nome do Link..."
+          placeholder={t("placeLink")}
           value={nameInput}
           onChange={(e) => setNameInput(e.target.value)}
         />
 
-        <label className="label">URL do Link</label>
+        <label className="label">{t("labelUrl")}</label>
 
         <Input
           type="url"
-          placeholder="Informe a URL..."
+          placeholder={t("placeUrl")}
           value={urlInput}
           onChange={(e) => setUrlInput(e.target.value)}
         />
 
         <section className="container-colors">
           <div>
-            <label className="label right">Fundo do link</label>
+            <label className="label right">{t("backgroundLink")}</label>
             <input
               type="color"
               value={backgroundColorInput}
@@ -117,7 +120,7 @@ function Admin() {
           </div>
 
           <div>
-            <label className="label right">Cor do link</label>
+            <label className="label right">{t("linkColor")}</label>
             <input
               type="color"
               value={textColorInput}
@@ -128,7 +131,7 @@ function Admin() {
 
         {nameInput !== "" && (
           <div className="preview">
-            <label className="label">veja como esta ficando</label>
+            <label className="label">{t("preview")}</label>
 
             <article
               style={{
@@ -144,11 +147,11 @@ function Admin() {
         )}
 
         <button className="btn-register" type="submit">
-          Cadastrar <MdAddLink />
+          {t("register")} <MdAddLink />
         </button>
       </form>
 
-      <h2 className="title">Meus Links</h2>
+      <h2 className="title">{t("myLinks")}</h2>
 
       {links.map((item, index) => (
         <article

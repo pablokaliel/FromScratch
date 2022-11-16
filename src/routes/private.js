@@ -3,41 +3,37 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { auth } from "../services/firebaseConnection";
 
-export default function Private({children}) {
+export default function Private({ children }) {
+  const [loading, setLoading] = useState(true);
+  const [signed, setSigned] = useState(false);
 
-  const [loading,setLoading] = useState(true);
-  const [signed, setSigned]= useState(false);
-
-  useEffect(()=>{
+  useEffect(() => {
     async function chekLogin() {
-      const unsb =onAuthStateChanged(auth,(user)=>{
-       if(user){
-        const userData = {
-          uid: user.uid,
-          email: user.email
-        };
-        localStorage.setItem("@detailUser",JSON.stringify(userData))
-        setLoading(false);
-        setSigned(true);
-       }else{
-        setLoading(false);
-        setSigned(false);
-       }
-      })
+      const unsb = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const userData = {
+            uid: user.uid,
+            email: user.email,
+          };
+          localStorage.setItem("@detailUser", JSON.stringify(userData));
+          setLoading(false);
+          setSigned(true);
+        } else {
+          setLoading(false);
+          setSigned(false);
+        }
+      });
     }
     chekLogin();
-  },[])
+  }, []);
 
-  if(loading){
-    return(
-      <div></div>
-    );
-  } 
-
-  if(!signed) {
-    return <Navigate to="/login" />
+  if (loading) {
+    return <div></div>;
   }
 
-  return children
-}
+  if (!signed) {
+    return <Navigate to="/login" />;
+  }
 
+  return children;
+}

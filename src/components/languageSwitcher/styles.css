@@ -1,0 +1,32 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin-left: 70%;
+}
+
+.imageLogo {
+  height: 70px;
+  margin-left: 15px;
+  justify-content: space-between;
+  width: 70px;
+}
+.imageLogo:hover {
+  opacity: 0.6;
+}
+
+.language-switcher > button {
+  cursor: pointer;
+  margin-left: 75px;
+  margin-bottom: 35px;
+  background: none;
+  border: none;
+  height: 4px;
+  width: 4px;
+}
+
+.language-switcher > button > span {
+  color: white;
+  font-size: 12px;
+  margin-left: 25px;
+}

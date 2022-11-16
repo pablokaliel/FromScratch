@@ -1,0 +1,24 @@
+{
+  "translation":{
+     "linksBelow":"Hi, see my links below",
+     "pageNotFound":"Sorry, Page not found!",
+     "pageNotExist":"The page you are looking for does not exist",
+     "backHome":"Back to Home",
+     "labelLink":"Link Name",
+     "placeLink":"Inform link name...",
+     "labelUrl":"Link URL",
+     "placeUrl":"Inform url of the link...",
+     "backgroundLink":"Link Background",
+     "linkColor":"Link Color",
+     "preview":"See how it's getting",
+     "login":"Please provide you email",
+     "password":"Please provide you password",
+     "access":"Access",
+     "myLinks":"My Links",
+     "register":"Register",
+     "links":"Sites",
+     "netWorks":"Social netWorks",
+     "selectYourLanguage":"Select your language",
+     "yourNetWorks":"My networks"
+    }
+}
