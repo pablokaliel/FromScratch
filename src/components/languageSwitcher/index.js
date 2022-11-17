@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import brasil from "./assets/brasil.png";
 import estadosUnidos from "./assets/estados-unidos.png";
@@ -16,7 +17,12 @@ function LanguageSwitcher() {
   ];
 
   return (
-    <div className="language-switcher">
+    <motion.div className="language-switcher"
+      initial={{ opacity: 0, x: 300 }}
+      animate={{ opacity: 1, x: 0, }}
+
+      transition={{ duration: 1,type:"spring",damping:10,stiffness:150,delay:0.9}}
+      >
       {languageOptions.map((languageOption) => (
         <button
           key={languageOption.value}
@@ -41,7 +47,7 @@ function LanguageSwitcher() {
           </span>
         </button>
       ))}
-    </div>
+    </motion.div>
   );
 }
 

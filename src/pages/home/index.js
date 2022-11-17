@@ -90,15 +90,19 @@ function Home() {
             style={{ backgroundColor: item.bg }}
           >
             <motion.a
-              initial={{ opacity: 0, x: -200 }}
-              animate={{ opacity: 1, x: 0, type: "spring", bounce: 0.2 }}
+              initial={{ opacity: 0, y: 30}}
+              animate={{ opacity: 1, y: 10,type: "spring", bounce: 0.2 }}
               transition={{ duration: 1, delay: 1.3 }}
               href={item.url}
               target="blank"
             >
-              <p className="link-text" style={{ color: item.color }}>
+              <motion.p 
+               initial={{ opacity: 0, x: -50,rotate:-30 }}
+               animate={{ opacity: 1, x: 0, rotate: 0 }}
+               transition={{duration: 1,type:"spring",damping:7,stiffness:130, delay:1.3 }}
+              className="link-text" style={{ color: item.color }}>
                 {item.name}
-              </p>
+              </motion.p>
             </motion.a>
           </motion.section>
         ))}
