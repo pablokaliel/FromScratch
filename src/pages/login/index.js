@@ -3,7 +3,7 @@ import Logo from "../../components/logotwo";
 import "./styles.css";
 import { auth } from "../../services/firebaseConnection";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 import Input from "../../components/input";
@@ -38,7 +38,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <Logo nameone="" nametwo="Login" />
+      <Link to="/"><Logo nameone="" nametwo="Login" /></Link>
 
       <form className="form" onSubmit={handleLogin}>
         <Input
