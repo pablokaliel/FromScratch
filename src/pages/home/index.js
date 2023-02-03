@@ -80,6 +80,7 @@ function Home() {
       </motion.span>
 
       <main className="links">
+       <div className="section-area">
         {links.map((item) => (
           <motion.section
             initial={{ opacity: 0, x: -200 }}
@@ -106,7 +107,8 @@ function Home() {
             </motion.a>
           </motion.section>
         ))}
-
+        </div>
+        <div>
         {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
           <footer>
             <Social url={socialLinks?.instagram}>
@@ -122,6 +124,7 @@ function Home() {
             </Social>
           </footer>
         )}
+        </div>
       </main>
     </div>
   );

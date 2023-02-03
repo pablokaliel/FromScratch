@@ -43,7 +43,7 @@
   line-height: 150%;
   color: #000;
 }
-.about-me{
+.about-me {
   max-width: 600px;
   text-align: justify;
   padding: 0 15px;
@@ -71,6 +71,37 @@ footer {
   }
 }
 
+.section-area {
+  padding: 12px;
+  max-height: 570px;
+  flex-direction: column;
+  background-color: transparent;
+  margin-bottom: 60px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-radius: 8px;
+}
+.section-area::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.section-area::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.section-area::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.section-area::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 @media screen and (max-width: 360) {
   .container h1 {
     font-size: 24px;
@@ -80,6 +111,4 @@ footer {
   .link-text {
     font-size: 14px;
   }
- 
-  
 }

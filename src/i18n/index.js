@@ -6,7 +6,7 @@ import ptBRJson from "./translations/ptBR.json";
 import enJson from "./translations/en.json";
 
 i18next.use(initReactI18next).init({
-  fallbackLng: "en",
+  fallbackLng: "ptBR",
   interpolation: {
     escapeValue: false,
   },
