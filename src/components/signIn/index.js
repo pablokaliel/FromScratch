@@ -1,19 +1,27 @@
-import "./styles.css"
-import {AiOutlineGoogle} from "react-icons/ai";
+import "./styles.css";
+import { AiOutlineGoogle } from "react-icons/ai";
+
+import { Container, Title, Text, Btn } from "./styles";
 
 function SignIn() {
+  return (
+    <Container className="container">
+      <Title>Acesse sua conta pelo Google</Title>
 
-  return ( 
-    <div className="container">
-      <h1>Acesse sua conta pelo Google</h1>
+      <Text>
+        Utilizando autenticação social, por exemplo, autenticação com a Google
+        você
+        <br />
+        facilita a vida do usuário permitindo utilizar sua aplicação sem fazer
+        cadastro.
+      </Text>
 
-      <span>Utilizando autenticação social, por exemplo, autenticação com a Google você<br/>
-      facilita a vida do usuário permitindo utilizar sua aplicação sem fazer cadastro.
-      </span>
-
-      <button type="button" className="button"> <AiOutlineGoogle style={{marginRight:8}}/> entrar com Google</button>
-    </div>
-   );
+      <Btn type="button" className="button">
+        {" "}
+        <AiOutlineGoogle style={{ marginRight: 8 }} /> entrar com Google
+      </Btn>
+    </Container>
+  );
 }
 
 export default SignIn;

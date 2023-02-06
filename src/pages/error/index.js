@@ -1,24 +1,24 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+
 import Logo from "../../components/logotwo";
-import "./styles.css";
+import { ContainerError, Title, Text, LinkRef, LinkRefTwo } from "./styles";
 
 function Error() {
   const { t } = useTranslation();
 
   return (
-    <div className="error">
-      <Link to="/">
+    <ContainerError className="error">
+      <LinkRefTwo to="/">
         <Logo nameone="Page" nametwo="Error" />
-      </Link>
+      </LinkRefTwo>
 
-      <h1>{t("pageNotFound")}</h1>
-      <p>{t("pageNotExist")}</p>
+      <Title>{t("pageNotFound")}</Title>
+      <Text>{t("pageNotExist")}</Text>
 
-      <Link className="link" to="/">
+      <LinkRef className="link" to="/">
         {t("backHome")}
-      </Link>
-    </div>
+      </LinkRef>
+    </ContainerError>
   );
 }
 

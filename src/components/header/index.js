@@ -1,10 +1,10 @@
-import "./styles.css";
-
 import { BiLogOut } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { auth } from "../../services/firebaseConnection";
 import { signOut } from "firebase/auth";
 import { useTranslation } from "react-i18next";
+
+import { AdminHeader, NavHeader } from "./styles";
 
 function Header() {
   const { t } = useTranslation();
@@ -14,8 +14,8 @@ function Header() {
   }
 
   return (
-    <header className="admin-header">
-      <nav className="nav-header">
+    <AdminHeader className="admin-header">
+      <NavHeader className="nav-header">
         <Link to="/">
           {" "}
           <button onClick={handleLogout}>
@@ -25,8 +25,8 @@ function Header() {
 
         <Link to="/admin">{t("links")}</Link>
         <Link to="/admin/social">{t("netWorks")}</Link>
-      </nav>
-    </header>
+      </NavHeader>
+    </AdminHeader>
   );
 }
 

@@ -1,6 +1,6 @@
 import Header from "../../components/header";
 import Input from "../../components/input";
-import "./styles.css";
+import { AdminContainer, TitleSocial, Form, Label, Button } from "./styles";
 
 import { MdAddLink } from "react-icons/md";
 import { useEffect, useState } from "react";
@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
 function Networks() {
- 
   const { t } = useTranslation();
 
   const [instagram, setInstagram] = useState("");
@@ -48,38 +47,38 @@ function Networks() {
   }
 
   return (
-    <div className="admin-container">
+    <AdminContainer className="admin-container">
       <Header />
 
-      <h1 className="title-social">{t("yourNetWorks")}</h1>
+      <TitleSocial className="title-social">{t("yourNetWorks")}</TitleSocial>
 
-      <form className="form" onSubmit={handleSave}>
-        <label className="label">Link do Instagram</label>
+      <Form className="form" onSubmit={handleSave}>
+        <Label className="label">Link do Instagram</Label>
         <Input
           placeholder="Digite a URL do instagram..."
           value={instagram}
           onChange={(e) => setInstagram(e.target.value)}
         />
 
-        <label className="label">Link do gitHub</label>
+        <Label className="label">Link do gitHub</Label>
         <Input
           placeholder="Digite a URL do GitHub..."
           value={github}
           onChange={(e) => setGitHub(e.target.value)}
         />
 
-        <label className="label">Link do Discord</label>
+        <Label className="label">Link do Discord</Label>
         <Input
           placeholder="Digite a URL do Discord..."
           value={discord}
           onChange={(e) => setDiscord(e.target.value)}
         />
 
-        <button type="submit" className="btn-register">
+        <Button type="submit" className="btn-register">
           Salvar Links <MdAddLink size={24} color="#fff" />
-        </button>
-      </form>
-    </div>
+        </Button>
+      </Form>
+    </AdminContainer>
   );
 }
 

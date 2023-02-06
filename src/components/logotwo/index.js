@@ -1,19 +1,24 @@
-import { motion } from "framer-motion";
-import "./styles.css";
+import { LogoTwo, TextTitle, Text } from "./styles";
 
 function Logo(props) {
   return (
-    <motion.div
+    <LogoTwo
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{duration: 1,type:"spring",damping:5,stiffness:150,delay:0.9 }}
+      transition={{
+        duration: 1,
+        type: "spring",
+        damping: 5,
+        stiffness: 150,
+        delay: 0.9,
+      }}
       className="container-logo-two"
     >
-      <h1 className="logo-two">
+      <TextTitle className="logo-two">
         {props.nameone}
-        <span className="logo-two-text">{props.nametwo}</span>
-      </h1>
-    </motion.div>
+        <Text className="logo-two-text">{props.nametwo}</Text>
+      </TextTitle>
+    </LogoTwo>
   );
 }
 

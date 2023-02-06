@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Logo from "../../components/logotwo";
-import "./styles.css";
 import { auth } from "../../services/firebaseConnection";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { LoginContainer, Form, Btn } from "./styles";
 
 import { toast } from "react-toastify";
 import Input from "../../components/input";
@@ -37,10 +37,12 @@ function Login() {
   }
 
   return (
-    <div className="login-container">
-      <Link to="/"><Logo nameone="" nametwo="Login" /></Link>
+    <LoginContainer className="login-container">
+      <Link to="/">
+        <Logo nameone="" nametwo="Login" />
+      </Link>
 
-      <form className="form" onSubmit={handleLogin}>
+      <Form className="form" onSubmit={handleLogin}>
         <Input
           type="email"
           placeholder={t("login")}
@@ -56,9 +58,9 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">{t("access")}</button>
-      </form>
-    </div>
+        <Btn type="submit">{t("access")}</Btn>
+      </Form>
+    </LoginContainer>
   );
 }
 

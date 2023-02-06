@@ -1,11 +1,25 @@
 import { useState, useEffect } from "react";
+
 import Header from "../../components/header";
-import "./styles.css";
 import Logo from "../../components/logotwo";
 import Input from "../../components/input";
+import LanguageSwitcher from "../../components/languageSwitcher";
 
+import {
+  AdminContainer,
+  Form,
+  SectionContainerColors,
+  InputColor,
+  Preview,
+  ArticleList,
+  BtnRegister,
+  TextH2,
+  TextP,
+  BtnDelete,
+} from "./styles";
 import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
+
 import { db } from "../../services/firebaseConnection";
 import {
   addDoc,
@@ -19,9 +33,9 @@ import {
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../../components/languageSwitcher";
 
 function Admin() {
+  
   const [nameInput, setNameInput] = useState("");
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
@@ -84,14 +98,14 @@ function Admin() {
   }
 
   return (
-    <div className="admin-container">
+    <AdminContainer className="admin-container">
       <LanguageSwitcher />
       <Header />
       <Link to="/">
         <Logo nameone="Creator" nametwo="Links" />
       </Link>
 
-      <form className="form" onSubmit={handleRegister}>
+      <Form className="form" onSubmit={handleRegister}>
         <label className="label">{t("labelLink")}</label>
 
         <Input
@@ -109,10 +123,12 @@ function Admin() {
           onChange={(e) => setUrlInput(e.target.value)}
         />
 
-        <section className="container-colors">
+        <SectionContainerColors className="container-colors">
           <div>
-            <label className="label right">{t("backgroundLink")}</label>
-            <input
+            <label className="label right">
+              {t("backgroundLink")}
+            </label>
+            <InputColor
               type="color"
               value={backgroundColorInput}
               onChange={(e) => setBackgroundColorInput(e.target.value)}
@@ -121,19 +137,19 @@ function Admin() {
 
           <div>
             <label className="label right">{t("linkColor")}</label>
-            <input
+            <InputColor
               type="color"
               value={textColorInput}
               onChange={(e) => setTextColorInput(e.target.value)}
             />
           </div>
-        </section>
+        </SectionContainerColors>
 
         {nameInput !== "" && (
-          <div className="preview">
+          <Preview className="preview">
             <label className="label">{t("preview")}</label>
 
-            <article
+            <ArticleList
               style={{
                 marginBottom: 8,
                 marginTop: 8,
@@ -141,37 +157,37 @@ function Admin() {
               }}
               className="list"
             >
-              <p style={{ color: textColorInput }}>{nameInput}</p>
-            </article>
-          </div>
+              <TextP style={{ color: textColorInput }}>{nameInput}</TextP>
+            </ArticleList>
+          </Preview>
         )}
 
-        <button className="btn-register" type="submit">
+        <BtnRegister className="btn-register" type="submit">
           {t("register")} <MdAddLink />
-        </button>
-      </form>
+        </BtnRegister>
+      </Form>
 
-      <h2 className="title">{t("myLinks")}</h2>
+      <TextH2 className="title">{t("myLinks")}</TextH2>
 
       {links.map((item, index) => (
-        <article
+        <ArticleList
           key={index}
-          className="list animate-pop"
+          className="list "
           style={{ backgroundColor: item.bg, color: item.color }}
         >
-          <p>{item.name}</p>
+          <TextP>{item.name}</TextP>
 
           <div>
-            <button
+            <BtnDelete
               className="btn-delete"
               onClick={() => handleDeleteLink(item.id)}
             >
               <FiTrash2 size={18} color="#FFF" />
-            </button>
+            </BtnDelete>
           </div>
-        </article>
+        </ArticleList>
       ))}
-    </div>
+    </AdminContainer>
   );
 }
 

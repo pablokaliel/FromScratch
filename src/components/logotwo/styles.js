@@ -1,16 +1,17 @@
-.container-logo-two {
-  margin-bottom: 20px;
-}
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
-.logo-two {
+export const LogoTwo = styled(motion.div)`
+  margin-bottom: 20px;
+`;
+export const TextTitle = styled.h1`
   margin-top: 44px;
   margin-bottom: 28px;
   color: #fff;
   font-size: 54px;
   z-index: 10;
-}
-
-.logo-two-text {
+`;
+export const Text = styled.span`
   background-image: linear-gradient(
     to top,
     #4fb576 0%,
@@ -28,4 +29,4 @@
   left: -4px;
   bottom: -23px;
   z-index: -1;
-}
+`;

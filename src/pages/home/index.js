@@ -1,9 +1,21 @@
 import Social from "../../components/Social";
-import "./styles.css";
+
 import { FaInstagram, FaGithub, FaDiscord } from "react-icons/fa";
 import { useState, useEffect } from "react";
+
 import LogoTwo from "../../components/logotwo";
-import { motion } from "framer-motion";
+import LanguageSwitcher from "../../components/languageSwitcher";
+
+import {
+  Container,
+  AboutMe,
+  Links,
+  SectionArea,
+  HRef,
+  LinkArea,
+  TextP,
+  FooterArea,
+} from "./styles";
 
 import { db } from "../../services/firebaseConnection";
 import {
@@ -16,10 +28,8 @@ import {
 } from "firebase/firestore";
 
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../../components/languageSwitcher";
 
 function Home() {
- 
   const [links, setLinks] = useState([]);
 
   const [socialLinks, setSocialLinks] = useState({});
@@ -67,66 +77,75 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <Container className="container">
       <LanguageSwitcher />
 
       <LogoTwo nameone="Pablo" nametwo="Kaliel" />
-      <motion.span className="about-me"
+      <AboutMe
+        className="about-me"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
         {t("linksBelow")}: 👇
-      </motion.span>
+      </AboutMe>
 
-      <main className="links">
-       <div className="section-area">
-        {links.map((item) => (
-          <motion.section
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 0, type: "spring", bounce: 0.2 }}
-            transition={{ duration: 1 }}
-            key={item.id}
-            className="link-area"
-            style={{ backgroundColor: item.bg }}
-          >
-            <motion.a
-              initial={{ opacity: 0, y: 30}}
-              animate={{ opacity: 1, y: 10,type: "spring", bounce: 0.2 }}
-              transition={{ duration: 1, delay: 1.3 }}
-              href={item.url}
-              target="blank"
+      <Links className="links">
+        <SectionArea className="section-area">
+          {links.map((item) => (
+            <LinkArea
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x: 0, type: "spring", bounce: 0.2 }}
+              transition={{ duration: 1 }}
+              key={item.id}
+              className="link-area"
+              style={{ backgroundColor: item.bg }}
             >
-              <motion.p 
-               initial={{ opacity: 0, x: -50,rotate:-30 }}
-               animate={{ opacity: 1, x: 0, rotate: 0 }}
-               transition={{duration: 1,type:"spring",damping:7,stiffness:130, delay:1.3 }}
-              className="link-text" style={{ color: item.color }}>
-                {item.name}
-              </motion.p>
-            </motion.a>
-          </motion.section>
-        ))}
-        </div>
+              <HRef
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 10, type: "spring", bounce: 0.2 }}
+                transition={{ duration: 1, delay: 1.3 }}
+                href={item.url}
+                target="blank"
+              >
+                <TextP
+                  initial={{ opacity: 0, x: -50, rotate: -30 }}
+                  animate={{ opacity: 1, x: 0, rotate: 0 }}
+                  transition={{
+                    duration: 1,
+                    type: "spring",
+                    damping: 7,
+                    stiffness: 130,
+                    delay: 1.3,
+                  }}
+                  className="link-text"
+                  style={{ color: item.color }}
+                >
+                  {item.name}
+                </TextP>
+              </HRef>
+            </LinkArea>
+          ))}
+        </SectionArea>
         <div>
-        {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
-          <footer>
-            <Social url={socialLinks?.instagram}>
-              <FaInstagram size={35} color="#fff" />
-            </Social>
+          {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
+            <FooterArea>
+              <Social url={socialLinks?.instagram}>
+                <FaInstagram size={35} color="#fff" />
+              </Social>
 
-            <Social url={socialLinks?.github}>
-              <FaGithub size={35} color="#fff" />
-            </Social>
+              <Social url={socialLinks?.github}>
+                <FaGithub size={35} color="#fff" />
+              </Social>
 
-            <Social url={socialLinks?.discord}>
-              <FaDiscord size={35} color="#fff" />
-            </Social>
-          </footer>
-        )}
+              <Social url={socialLinks?.discord}>
+                <FaDiscord size={35} color="#fff" />
+              </Social>
+            </FooterArea>
+          )}
         </div>
-      </main>
-    </div>
+      </Links>
+    </Container>
   );
 }
 
