@@ -10,10 +10,10 @@ export const SwitchContainer = styled(motion.div)`
   @media only screen and (max-width: 768px) {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom:24px;
     width: 100%;
     margin-left: 0;
-    padding-right: 20%;
+    padding-right: 5%;
   }
 `;
 export const Image = styled.img`
@@ -21,6 +21,11 @@ export const Image = styled.img`
   margin-left: 15px;
   justify-content: space-between;
   width: 70px;
+
+  @media only screen and (max-width: 768px) {
+   height: 60px;
+   width:60px;
+  }
 
   :hover {
     opacity: 0.6;
@@ -40,4 +45,8 @@ export const Text = styled.span`
   font-size: 12px;
   margin-left: 25px;
   color: ${(props) => props.theme.colors.link};
+  @media only screen and (max-width: 768px) {
+   font-size:11px;
+   margin-left:20px
+  }
 `;
