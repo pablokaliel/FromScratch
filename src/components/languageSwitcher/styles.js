@@ -39,4 +39,5 @@ export const Text = styled.span`
   color: white;
   font-size: 12px;
   margin-left: 25px;
+  color: ${(props) => props.theme.colors.link};
 `;

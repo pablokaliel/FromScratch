@@ -35,7 +35,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function Admin() {
-  
   const [nameInput, setNameInput] = useState("");
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
@@ -125,9 +124,7 @@ function Admin() {
 
         <SectionContainerColors className="container-colors">
           <div>
-            <label className="label right">
-              {t("backgroundLink")}
-            </label>
+            <label className="label right">{t("backgroundLink")}</label>
             <InputColor
               type="color"
               value={backgroundColorInput}

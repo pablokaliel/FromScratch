@@ -22,4 +22,3 @@ export const Btn = styled.button`
   font-size: 18px;
   border-image: linear-gradient(to right, #0003b9 33%, rgb(201, 198, 198)) 1;
 `;
-

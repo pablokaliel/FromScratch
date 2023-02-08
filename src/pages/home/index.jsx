@@ -4,7 +4,6 @@ import { FaInstagram, FaGithub, FaDiscord } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 import LogoTwo from "../../components/logotwo";
-import LanguageSwitcher from "../../components/languageSwitcher";
 
 import {
   Container,
@@ -28,6 +27,7 @@ import {
 } from "firebase/firestore";
 
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../../components/languageSwitcher";
 
 function Home() {
   const [links, setLinks] = useState([]);
@@ -131,15 +131,15 @@ function Home() {
           {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
             <FooterArea>
               <Social url={socialLinks?.instagram}>
-                <FaInstagram size={35} color="#fff" />
+                <FaInstagram size={35} color="#747474" />
               </Social>
 
               <Social url={socialLinks?.github}>
-                <FaGithub size={35} color="#fff" />
+                <FaGithub size={35} color="#747474" />
               </Social>
 
               <Social url={socialLinks?.discord}>
-                <FaDiscord size={35} color="#fff" />
+                <FaDiscord size={35} color="#747474" />
               </Social>
             </FooterArea>
           )}

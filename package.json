@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/styled-components": "^5.1.26",
     "firebase": "^9.13.0",
     "framer-motion": "^7.6.6",
     "i18next": "^22.0.5",
@@ -15,6 +16,7 @@
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-switch": "^7.0.0",
     "react-toastify": "^9.1.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
@@ -42,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
   }
 }

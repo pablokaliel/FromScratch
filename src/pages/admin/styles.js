@@ -98,7 +98,7 @@ export const BtnRegister = styled.button`
   }
 `;
 export const TextH2 = styled.h2`
-  color: #fff;
+  color: ${(props) => props.theme.colors.link};
   margin: 28px 0 14px 0;
 `;
 

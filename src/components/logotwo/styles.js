@@ -7,21 +7,12 @@ export const LogoTwo = styled(motion.div)`
 export const TextTitle = styled.h1`
   margin-top: 44px;
   margin-bottom: 28px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.link};
   font-size: 54px;
   z-index: 10;
 `;
 export const Text = styled.span`
-  background-image: linear-gradient(
-    to top,
-    #4fb576 0%,
-    #44c489 30%,
-    #28a9ae 46%,
-    #28a2b7 59%,
-    #4c7788 71%,
-    #6c4f63 86%,
-    #432c39 100%
-  );
+  background-image: ${(props) => props.theme.colors.subTitle};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

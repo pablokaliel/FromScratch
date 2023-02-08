@@ -25,7 +25,7 @@ export const Container = styled.div`
   }
 `;
 export const AboutMe = styled(motion.span)`
-  color: #f1f1f1;
+  color: ${(props) => props.theme.colors.link};
   margin-bottom: 18px;
   max-width: 600px;
   text-align: justify;
@@ -67,7 +67,7 @@ export const SectionArea = styled.div`
 export const HRef = styled(motion.a)``;
 
 export const LinkArea = styled(motion.div)`
-  background-color: #fff;
+  color: ${(props) => props.theme.colors.link};
   width: 100%;
   margin-bottom: 18px;
   padding: 8px 0;
@@ -95,62 +95,3 @@ export const FooterArea = styled.footer`
   gap: 14px;
   margin: 18px 0;
 `;
-
-// .container {
-
-// }
-
-// .container h1 {
-//   margin-bottom: 14px;
-//   color: #fff;
-//   font-size: 44px;
-//   padding-top: 94px;
-// }
-
-// .container span {
-
-// }
-
-// .links {
-
-// }
-
-// .link-area {
-
-// }
-
-// .link-text {
-
-// }
-// .about-me {
-
-// }
-
-// .link-area:hover {
-
-// }
-
-// footer {
-
-// }
-
-//
-
-// .section-area {
-
-// }
-// .section-area
-
-// /* Track */
-// .section-area
-
-// /* Handle */
-// .section-area
-
-// /* Handle on hover */
-// .section-area
-
-//   .link-text {
-
-//   }
-// }
