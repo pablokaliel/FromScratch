@@ -15,3 +15,15 @@
 
 -> https://www.figma.com/file/xhQ2hQHTM86HtFuj3m7jcd/DevLink---Semana-React-JS?node-id=0%3A1
 
+  ## `Project Page`
+
+  clique para visualizar o resultado:  <td><a href="https://pkproject.vercel.app/">🔗</a></td>
+
+<div align="center">
+<h1>Resultado</h1>
+<img src="https://user-images.githubusercontent.com/104238801/219652678-78db1011-f025-4d4b-ab16-e5660ba14acc.png" width="700px" />
+</div>
+
+
+
+
