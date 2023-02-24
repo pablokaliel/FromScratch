@@ -1,16 +1,13 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App, { router } from "./App";
+import App from "./App";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 
+import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 
 import "./i18n/index";
-
-
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

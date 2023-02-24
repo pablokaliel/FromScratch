@@ -30,11 +30,13 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function Admin() {
+  
   const [nameInput, setNameInput] = useState("");
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
@@ -48,7 +50,7 @@ function Admin() {
     const linksRef = collection(db, "links");
     const queryRef = query(linksRef, orderBy("created", "asc"));
 
-    const unsub = onSnapshot(queryRef, (snapshot) => {
+    onSnapshot(queryRef, (snapshot) => {
       let list = [];
 
       snapshot.forEach((doc) => {

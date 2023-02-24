@@ -72,7 +72,7 @@ function Networks() {
           placeholder="Digite a URL do Discord..."
           value={discord}
           onChange={(e) => setDiscord(e.target.value)}
-        />
+        /> 
 
         <Button type="submit" className="btn-register">
           Salvar Links <MdAddLink size={24} color="#fff" />

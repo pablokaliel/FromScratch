@@ -1,4 +1,3 @@
-import ReactSwitch from "react-switch";
 import { Container, DivGit, ViewGit, DivTitle, Title, GitHub } from "./styles";
 import Switch from "react-switch";
 import { ThemeContext } from "styled-components";

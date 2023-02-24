@@ -7,6 +7,7 @@ export const AdminContainer = styled.div`
   min-height: 100vh;
   padding: 0 6px 30px 6px;
 `;
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -16,6 +17,7 @@ export const Form = styled.form`
     width: 100%;
   }
 `;
+
 export const InputColor = styled.input`
   width: 24px;
   height: 24px;
@@ -42,9 +44,7 @@ export const SectionContainerColors = styled.section`
   align-items: center;
   text-align: center;
 `;
-export const LabelRight = styled.label`
-  margin-right: 14px;
-`;
+
 export const Preview = styled.div`
   margin: 0 0 28px 0;
   padding: 4px;
@@ -79,7 +79,9 @@ export const ArticleList = styled.article`
     }
   }
 `;
+
 export const TextP = styled.p``;
+
 export const BtnRegister = styled.button`
   background-color: #36f;
   border-image: linear-gradient(90deg, #0003b9 33%, #c9c6c6) 1;
@@ -97,6 +99,7 @@ export const BtnRegister = styled.button`
     margin-left: 8px;
   }
 `;
+
 export const TextH2 = styled.h2`
   color: ${(props) => props.theme.colors.link};
   margin: 28px 0 14px 0;

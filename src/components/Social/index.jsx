@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { HrefLink } from "./styles";
 
 function Social({ url, children }) {

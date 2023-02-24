@@ -22,26 +22,4 @@ export const NavHeader = styled.nav`
   display: flex;
   align-items: center;
   border-radius: 4px;
-
-  button {
-    border: 0;
-    background-color: transparent;
-    margin-right: 24px;
-    margin-left: 8px;
-  }
-  a {
-    margin-right: 14px;
-    color: #21242d;
-    transition: all 0.3s ease-in-out;
-
-    a:hover {
-      color: #eda617;
-    }
-  }
-`;
-export const Button = styled.button`
-  border: 0;
-  background-color: transparent;
-  margin-right: 24px;
-  margin-left: 8px;
 `;
