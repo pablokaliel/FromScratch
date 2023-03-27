@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const AdminHeader = styled.header`
@@ -22,4 +23,15 @@ export const NavHeader = styled.nav`
   display: flex;
   align-items: center;
   border-radius: 4px;
+`;
+
+export const LinkBack = styled(Link)`
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+  }
+`;
+export const LinkSocial = styled(Link)`
+  margin-left: 15px;
 `;
